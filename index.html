@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.scss" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Booklist</h1>
+    </header>
+    <main>
+      <section id="add-book-form">
+        <h2>Add Book</h2>
+        <form id="book-form">
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title" required />
+          <label for="author">Author:</label>
+          <input type="text" id="author" name="author" required />
+          <label for="category">Category:</label>
+          <input type="text" id="category" name="category" required />
+          <label for="year">Year:</label>
+          <input type="number" id="year" name="year" required />
+          <label for="price">Price:</label>
+          <input type="number" step="0.01" id="price" name="price" required />
+          <label for="image">Image URL:</label>
+          <input type="url" id="image" name="image" required />
+          <input type="submit" value="Add Book" />
+        </form>
+      </section>
+      <section id="booklist">
+        <ul></ul>
+      </section>
+      <section id="search-filters">
+        <input type="text" id="search-bar" placeholder="Search for books..." />
+        <div id="filter-menu">
+          <label for="category">Category:</label>
+          <select id="category" name="category">
+            <option value="">All Categories</option>
+            <!-- Cia knygu stilius -->
+          </select>
+          <label for="author">Author:</label>
+          <select id="author" name="author">
+            <option value="">All Authors</option>
+            <!-- Cia autorius -->
+          </select>
+        </div>
+        <div id="sorting-menu">
+          <label for="sort-by">Sort by:</label>
+          <select id="sort-by" name="sort-by">
+            <option value="original">Original order</option>
+            <option value="price-low-high">Price: Low to High</option>
+            <option value="price-high-low">Price: High to Low</option>
+          </select>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
