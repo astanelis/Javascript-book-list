@@ -16,8 +16,8 @@ bookForm.addEventListener('submit', function (event) {
     event.preventDefault();
 
     const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    const category = document.getElementById('category').value;
+    const author = document.getElementById('add-author').value;
+const category = document.getElementById('add-category').value;
     const year = document.getElementById('year').value;
     const price = document.getElementById('price').value;
     const image = document.getElementById('image').value;
@@ -64,6 +64,7 @@ function displayBooks() {
 
     bookList.innerHTML = html;
     initSwiper();
+
     // Show or hide arrows based on the number of cards
     const nextButton = document.querySelector('.swiper-button-next');
     const prevButton = document.querySelector('.swiper-button-prev');
