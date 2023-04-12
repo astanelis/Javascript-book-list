@@ -56,8 +56,10 @@ function displayBooks() {
                 <p class="book-category">Category: ${book.category}</p>
                 <p class="book-year">Year: ${book.year}</p>
                 <p class="book-price">Price: $${book.price}</p>
-                <button class="generated-button" onclick="deleteBook(${index})">Delete</button>
-                <button class="generated-button" onclick="editBook(${index})">Edit</button>
+                <div class="button-container">
+            <button class="generated-button" onclick="deleteBook(${index})">Delete</button>
+            <button class="generated-button" onclick="editBook(${index})">Edit</button>
+        </div>
             </li>
         `;
     });

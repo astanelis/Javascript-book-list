@@ -156,6 +156,7 @@ nav {
 }
 
 .generated-button {
+  
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -214,6 +215,23 @@ nav {
 
 #booklist {
   position: relative;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.generated-button {
+  width: 48%;
+}
+
+.book-image {
+  width: 200px;
+  height: 250px; /* Set the height to your desired value */
+  object-fit: cover;
 }
 
 @media (max-width: 480px) {
