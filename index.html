@@ -12,34 +12,42 @@
   </head>
   <body>
     <header>
-      <h1 class="logo">Booklist</h1>
       <nav>
+        <h1 class="logo">Booklist</h1>
         <section id="search-filters">
           <input type="text" id="search-bar" placeholder="Search for books..." />
-          <div id="filter-menu">
-            <label for="category">Category:</label>
-            <select id="category" name="category">
-              <option value="">All Categories</option>
-              <option value="Fiction">Fiction</option>
-              <option value="Non-fiction">Non-fiction</option>
-            </select>
-            <label for="author">Author:</label>
-            <select id="author" name="author">
-              <option value="">All Authors</option>
-              <option value="Author 1">Author 1</option>
-              <option value="Author 2">Author 2</option>
-            </select>
+          <div class="filter-menu">
+            <div class="dropdown-wrapper">
+              <label for="category">Category: <span class="arrow">&#x25BC;</span></label>
+              <select id="category" name="category" class="dropdown-menu">
+                <option value="">All Categories</option>
+                <option value="Fiction">Fiction</option>
+                <option value="Non-fiction">Non-fiction</option>
+              </select>
+            </div>
           </div>
-          <div id="sorting-menu">
-            <label for="sort-by">Sort by:</label>
-            <select id="sort-by" name="sort-by">
-              <option value="original">Original order</option>
-              <option value="price-low-high">Price: Low to High</option>
-              <option value="price-high-low">Price: High to Low</option>
-            </select>
+          <div class="filter-menu">
+            <div class="dropdown-wrapper">
+              <label for="author">Author: <span class="arrow">&#x25BC;</span></label>
+              <select id="author" name="author" class="dropdown-menu">
+                <option value="">All Authors</option>
+                <option value="Author 1">Author 1</option>
+                <option value="Author 2">Author 2</option>
+              </select>
+            </div>
           </div>
+          <div class="sorting-menu">
+            <div class="dropdown-wrapper">
+              <label for="sort-by">Sort by: <span class="arrow">&#x25BC;</span></label>
+              <select id="sort-by" name="sort-by" class="dropdown-menu">
+                <option value="original">Original order</option>
+                <option value="price-low-high">Price: Low to High</option>
+                <option value="price-high-low">Price: High to Low</option>
+              </select>
+            </div>
+          </div>
+          <button id="toggle-form-btn">Add a Book</button>
         </section>
-        <button id="toggle-form-btn">Add a Book</button>
       </nav>
     </header>
     <main>
