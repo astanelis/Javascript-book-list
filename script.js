@@ -64,6 +64,17 @@ function displayBooks() {
 
     bookList.innerHTML = html;
     initSwiper();
+    // Show or hide arrows based on the number of cards
+    const nextButton = document.querySelector('.swiper-button-next');
+    const prevButton = document.querySelector('.swiper-button-prev');
+
+    if (books.length > 0) {
+        nextButton.style.display = 'flex';
+        prevButton.style.display = 'flex';
+    } else {
+        nextButton.style.display = 'none';
+        prevButton.style.display = 'none';
+    }
 }
 
 function deleteBook(index) {
