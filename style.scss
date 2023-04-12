@@ -230,9 +230,34 @@ nav {
 
 .book-image {
   width: 200px;
-  height: 250px; /* Set the height to your desired value */
+  height: 250px; 
   object-fit: cover;
 }
+
+// Logo animation
+.logo {
+  position: relative;
+
+  &:before {
+    content: 'Booklist';
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: rgba(0, 123, 255, 0.3);
+    animation: logoAnimation 3s infinite;
+  }
+}
+
+@keyframes logoAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
 
 @media (max-width: 480px) {
   #book-form {
