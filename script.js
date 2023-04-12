@@ -1,5 +1,5 @@
 const bookForm = document.getElementById('book-form');
-const bookList = document.querySelector('#booklist ul');
+const bookList = document.querySelector('#booklist ul.booklist-container');
 
 class Book {
     constructor(title, author, category, year, price, image) {
@@ -49,20 +49,21 @@ function displayBooks() {
 
     books.forEach((book, index) => {
         html += `
-            <li>
-                <img src="${book.image}" alt="${book.title}" width="100">
-                <h3>${book.title}</h3>
-                <p>Author: ${book.author}</p>
-                <p>Category: ${book.category}</p>
-                <p>Year: ${book.year}</p>
-                <p>Price: $${book.price}</p>
-                <button onclick="deleteBook(${index})">Delete</button>
-                <button onclick="editBook(${index})">Edit</button>
+            <li class="swiper-slide booklist-item">
+                <img src="${book.image}" alt="${book.title}" width="100" class="book-image">
+                <h3 class="book-title">${book.title}</h3>
+                <p class="book-author">Author: ${book.author}</p>
+                <p class="book-category">Category: ${book.category}</p>
+                <p class="book-year">Year: ${book.year}</p>
+                <p class="book-price">Price: $${book.price}</p>
+                <button class="generated-button" onclick="deleteBook(${index})">Delete</button>
+                <button class="generated-button" onclick="editBook(${index})">Edit</button>
             </li>
         `;
     });
 
     bookList.innerHTML = html;
+    initSwiper();
 }
 
 function deleteBook(index) {
@@ -79,21 +80,21 @@ function editBook(index) {
 
     listItem.innerHTML = `
         <form class="edit-form">
-            <img src="${book.image}" alt="${book.title}" width="100">
+            <img src="${book.image}" alt="${book.title}" width="100" class="book-image">
             <label>Title:</label>
-            <input type="text" class="edit-title" value="${book.title}">
+            <input type="text" class="edit-title generated-input" value="${book.title}">
             <label>Author:</label>
-            <input type="text" class="edit-author" value="${book.author}">
+            <input type="text" class="edit-author generated-input" value="${book.author}">
             <label>Category:</label>
-            <input type="text" class="edit-category" value="${book.category}">
+            <input type="text" class="edit-category generated-input" value="${book.category}">
             <label>Year:</label>
-            <input type="number" class="edit-year" value="${book.year}">
+            <input type="number" class="edit-year generated-input" value="${book.year}">
             <label>Price:</label>
-            <input type="number" step="0.01" class="edit-price" value="${book.price}">
+            <input type="number" step="0.01" class="edit-price generated-input" value="${book.price}">
             <label>Image URL:</label>
-            <input type="url" class="edit-image" value="${book.image}">
-            <button type="submit">Save</button>
-            <button type="button" onclick="displayBooks()">Cancel</button>
+            <input type="url" class="edit-image generated-input" value="${book.image}">
+            <button type="submit" class="generated-button">Save</button>
+            <button type="button" class="generated-button" onclick="displayBooks()">Cancel</button>
         </form>
     `;
 
@@ -103,15 +104,16 @@ function editBook(index) {
 
         book.title = listItem.querySelector('.edit-title').value;
         book.author = listItem.querySelector('.edit-author').value;
-    book.category = listItem.querySelector('.edit-category').value;
-    book.year = listItem.querySelector('.edit-year').value;
-    book.price = listItem.querySelector('.edit-price').value;
-    book.image = listItem.querySelector('.edit-image').value;
+        book.category = listItem.querySelector('.edit-category').value;
+        book.year = listItem.querySelector('.edit-year').value;
+        book.price = listItem.querySelector('.edit-price').value;
+        book.image = listItem.querySelector('.edit-image').value;
 
-    books[index] = book;
-    saveBooks(books);
-    displayBooks();
-})}
+        books[index] = book;
+        saveBooks(books);
+        displayBooks();
+    });
+}
 
 const toggleFormBtn = document.getElementById('toggle-form-btn');
 const addBookForm = document.getElementById('add-book-form');
@@ -123,3 +125,20 @@ toggleFormBtn.addEventListener('click', () => {
         addBookForm.style.display = 'none';
     }
 });
+
+displayBooks(); // Call displayBooks to show the list of books when the page loads
+
+
+function initSwiper() {
+    new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  }
+  
+  displayBooks();
+  initSwiper();

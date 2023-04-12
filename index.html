@@ -5,16 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <link rel="stylesheet" href="style.scss" />
+    <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script defer src="script.js"></script>
   </head>
   <body>
     <header>
       <h1>Booklist</h1>
       <nav>
-        <section id="search-filters" class="nav-item">
+        <section id="search-filters">
           <input type="text" id="search-bar" placeholder="Search for books..." />
-          <div id="filter-menu" class="nav-item">
+          <div id="filter-menu">
             <label for="category">Category:</label>
             <select id="category" name="category">
               <option value="">All Categories</option>
@@ -26,7 +28,7 @@
               <!-- Cia autorius -->
             </select>
           </div>
-          <div id="sorting-menu" class="nav-item">
+          <div id="sorting-menu">
             <label for="sort-by">Sort by:</label>
             <select id="sort-by" name="sort-by">
               <option value="original">Original order</option>
@@ -35,7 +37,7 @@
             </select>
           </div>
         </section>
-        <button id="toggle-form-btn" class="nav-item">Add a Book</button>
+        <button id="toggle-form-btn">Add a Book</button>
       </nav>
     </header>
     <main>
@@ -58,7 +60,12 @@
         </form>
       </section>
       <section id="booklist">
-        <ul class="booklist-container"></ul>
+        <div class="swiper-container">
+          <ul class="swiper-wrapper booklist-container"></ul>
+          <!-- Add navigation controls -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
       </section>
     </main>
   </body>
