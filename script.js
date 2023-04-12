@@ -66,7 +66,6 @@ function displayBooks(booksToDisplay = getBooks()) {
   bookList.innerHTML = html
   initSwiper()
 
-  // Show or hide arrows based on the number of cards
   const nextButton = document.querySelector('.swiper-button-next')
   const prevButton = document.querySelector('.swiper-button-prev')
 
@@ -139,7 +138,7 @@ toggleFormBtn.addEventListener('click', () => {
   }
 })
 
-displayBooks() // Call displayBooks to show the list of books when the page loads
+displayBooks()
 
 function initSwiper() {
   new Swiper('.swiper-container', {
