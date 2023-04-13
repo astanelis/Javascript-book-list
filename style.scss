@@ -17,21 +17,31 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
   background: linear-gradient(135deg, #111 25%, #777 25%, #777 50%, #fff 50%, #fff 75%, #111 75%);
   background-size: 200% 200%;
   animation: gradientAnimation 120s ease infinite;
  
 }
   
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
+}
+
 header {
-  background-color: #f8f9fa;
+  background-color: #777;
   padding: 1rem;
   h1 {
     margin-bottom: 0.5rem;
   }
 }
 
+input, select, button {
+  font-size: 14px;
+  font-weight: 400;
+}
 nav {
   display: flex;
   align-items: center;
@@ -81,14 +91,15 @@ nav {
 }
 
 #add-book-form {
-  background-color: #f8f9fa;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   margin: 10px auto;
   margin-bottom: 10px;
-  animation: fadeIn 0.5s;
+  animation: fadeIn 1.6s;
 }
 
 @keyframes fadeIn {
@@ -115,32 +126,34 @@ nav {
   input[type="number"],
   input[type="url"] {
     width: 100%;
-    padding: 5px 10px;
-    border: 1px solid #ced4da;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color:  black;
+  transition: box-shadow 0.3s;
   }
 
   input[type="text"]:focus,
   input[type="number"]:focus,
   input[type="url"]:focus {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    outline: none;
+  outline: none;
   }
 
   input[type="submit"] {
     grid-column: span 2;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: #555;
       transform: translateY(-2px);
     }
   }
@@ -250,6 +263,8 @@ nav {
 .logo {
   position: relative;
   margin-right: 1rem;
+  font-size: 24px;
+  font-weight: 700;
 
   &:before {
     content: 'Booklist';
@@ -257,7 +272,7 @@ nav {
     top: 0;
     left: 0;
     color: #ffffff;
-    animation: logoAnimation 3s infinite;
+    animation: logoAnimation 5s infinite;
   }
 }
 
