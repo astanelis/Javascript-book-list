@@ -4,19 +4,44 @@
   box-sizing: border-box;
 }
 
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background: linear-gradient(135deg, #111 25%, #777 25%, #777 50%, #fff 50%, #fff 75%, #111 75%);
+  background-size: 200% 200%;
+  animation: gradientAnimation 120s ease infinite;
+ 
+}
+  
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 500;
 }
 
 header {
-  background-color: #f8f9fa;
+  background-color: #777;
   padding: 1rem;
   h1 {
     margin-bottom: 0.5rem;
   }
 }
 
+input, select, button {
+  font-size: 14px;
+  font-weight: 400;
+}
 nav {
   display: flex;
   align-items: center;
@@ -40,7 +65,7 @@ nav {
   outline: none;
 
   &:focus {
-    border-color: #66afe9;
+    border-color: black;
   }
 }
 
@@ -63,28 +88,18 @@ nav {
     }
   }
 
-  #toggle-form-btn {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
 }
 
 #add-book-form {
-  background-color: #f8f9fa;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   margin: 10px auto;
   margin-bottom: 10px;
-  animation: fadeIn 0.5s;
+  animation: fadeIn 1.6s;
 }
 
 @keyframes fadeIn {
@@ -110,39 +125,45 @@ nav {
   input[type="text"],
   input[type="number"],
   input[type="url"] {
-    width: 100%;
-    padding: 5px 10px;
-    border: 1px solid #ced4da;
-    border-radius: 3px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s;
+  width: 100%;
+  padding: 5px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  color:  black;
+  transition: box-shadow 0.3s;
   }
 
   input[type="text"]:focus,
   input[type="number"]:focus,
   input[type="url"]:focus {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    outline: none;
+  outline: none;
   }
 
   input[type="submit"] {
     grid-column: span 2;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.2s, transform 0.2s;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: #555;
       transform: translateY(-2px);
     }
   }
 }
 .booklist-item {
-  background-color: white;
+  background-color: #f0f0f0;
+  background-image: linear-gradient(45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%, transparent 75%, rgba(128, 128, 128, 0.1) 75%, rgba(128, 128, 128, 0.1)),
+    linear-gradient(45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%, transparent 75%, rgba(128, 128, 128, 0.1) 75%, rgba(128, 128, 128, 0.1));
+  background-size: 80px 80px;
+  background-position: 0 0, 40px 40px;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   padding: 1rem;
@@ -155,27 +176,38 @@ nav {
   align-items: center;
   width: 200px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  animation: moveBackground 5s linear infinite;
+}
 
-  &:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+.booklist-item:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  animation-play-state: paused;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0, 40px 40px;
+  }
+  100% {
+    background-position: 80px 0, 120px 40px;
   }
 }
 
-
-
 .generated-button {
-  
-  background-color: #4CAF50;
+  background-color: #333;
   color: white;
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 3px;
+  width: 48%;
+}
 
-  &:hover {
-    background-color: #45a049;
-  }
+.generated-button:hover {
+  background-color: #555;
 }
 
 .generated-input {
@@ -184,6 +216,23 @@ nav {
   border-radius: 3px;
   width: 100%;
   margin-bottom: 0.5rem;
+}
+.book-image {
+  position: relative;
+  width: 200px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.book-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 
@@ -232,28 +281,22 @@ nav {
   margin-top: 25px;
 }
 
-.generated-button {
-  width: 48%;
-}
 
-.book-image {
-  width: 200px;
-  height: 250px; 
-  object-fit: cover;
-}
 
 
 .logo {
   position: relative;
   margin-right: 1rem;
+  font-size: 24px;
+  font-weight: 700;
 
   &:before {
     content: 'Booklist';
     position: absolute;
     top: 0;
     left: 0;
-    color: rgba(0, 123, 255, 0.3);
-    animation: logoAnimation 3s infinite;
+    color: #ffffff;
+    animation: logoAnimation 5s infinite;
   }
 }
 
@@ -272,15 +315,17 @@ nav {
   display: none;
   position: absolute;
   background-color: #f8f9fa;
-  min-width: 160px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  padding: 12px 16px;
+  padding: 8px 12px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   top: 100%;
-  left: 0;
+  left: -14px; 
+  border-radius: 4px;
+
 }
 
 
@@ -288,6 +333,29 @@ nav {
 .sorting-menu:hover .dropdown-menu {
   display: block;
   max-height: none;
+}
+
+.icon-button {
+  background-color: #000000;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s;
+}
+
+.icon-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.icon-button:focus {
+  outline: none;
 }
 
 
