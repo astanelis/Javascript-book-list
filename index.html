@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="style.scss" />
     <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script defer src="script.js"></script>
   </head>
 
   <body>
+    
     <header>
       <nav>
         <h1 class="logo">Booklist</h1>
@@ -19,7 +22,7 @@
           <input type="text" id="search-bar" placeholder="Search for books..." />
           <div class="filter-menu">
             <div class="dropdown-wrapper">
-              <label for="category">Category: <span class="arrow">&#x25BC;</span></label>
+              <label for="category">Category<span class="arrow">&#x25BC;</span></label>
               <select id="category" name="category" class="dropdown-menu">
                 <option value="">All Categories</option>
                 <option value="Fiction">Fiction</option>
@@ -29,7 +32,7 @@
           </div>
           <div class="filter-menu">
             <div class="dropdown-wrapper">
-              <label for="author">Author: <span class="arrow">&#x25BC;</span></label>
+              <label for="author">Author<span class="arrow">&#x25BC;</span></label>
               <select id="author" name="author" class="dropdown-menu">
                 <option value="">All Authors</option>
                 <option value="Author 1">Author 1</option>
@@ -39,16 +42,19 @@
           </div>
           <div class="sorting-menu">
             <div class="dropdown-wrapper">
-              <label for="sort-by">Sort by: <span class="arrow">&#x25BC;</span></label>
+              <label for="sort-by">Sort by<span class="arrow">&#x25BC;</span></label>
               <select id="sort-by" name="sort-by" class="dropdown-menu">
-                <option value="original">Original order</option>
-                <option value="price-low-high">Price: Low to High</option>
-                <option value="price-high-low">Price: High to Low</option>
+                <option value="original">Original</option>
+                <option value="price-low-high">Price: L-H</option>
+                <option value="price-high-low">Price: H-L</option>
               </select>
             </div>
           </div>
-          <button id="toggle-form-btn">Add a Book</button>
-        </section>
+          <button id="toggle-form-btn" class="icon-button">
+            <i class="fas fa-book-open"></i>
+          </button>
+          
+          </section>
       </nav>
     </header>
     <main>

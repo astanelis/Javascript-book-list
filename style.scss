@@ -4,11 +4,26 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #111 25%, #777 25%, #777 50%, #fff 50%, #fff 75%, #111 75%);
+  background-size: 200% 200%;
+  animation: gradientAnimation 120s ease infinite;
+ 
+}
+  
 header {
   background-color: #f8f9fa;
   padding: 1rem;
@@ -40,7 +55,7 @@ nav {
   outline: none;
 
   &:focus {
-    border-color: #66afe9;
+    border-color: black;
   }
 }
 
@@ -63,17 +78,6 @@ nav {
     }
   }
 
-  #toggle-form-btn {
-    padding: 0.5rem 1rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    &:hover {
-      background-color: #0056b3;
-    }
-  }
 }
 
 #add-book-form {
@@ -252,7 +256,7 @@ nav {
     position: absolute;
     top: 0;
     left: 0;
-    color: rgba(0, 123, 255, 0.3);
+    color: #ffffff;
     animation: logoAnimation 3s infinite;
   }
 }
@@ -272,15 +276,17 @@ nav {
   display: none;
   position: absolute;
   background-color: #f8f9fa;
-  min-width: 160px;
+  min-width: 100px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
-  padding: 12px 16px;
+  padding: 8px 12px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   top: 100%;
-  left: 0;
+  left: -14px; 
+  border-radius: 4px;
+
 }
 
 
@@ -288,6 +294,29 @@ nav {
 .sorting-menu:hover .dropdown-menu {
   display: block;
   max-height: none;
+}
+
+.icon-button {
+  background-color: #000000;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.5s;
+}
+
+.icon-button:hover {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.icon-button:focus {
+  outline: none;
 }
 
 
