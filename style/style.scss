@@ -337,16 +337,17 @@ nav {
   justify-content: center;
   align-items: center;
   transition: background-color 0.5s;
+
+  &:hover{
+    background-color: #ffffff;
+    color: #000000;
+  }
+  &:focus{
+    outline: none;
+  }
+
 }
 
-.icon-button:hover {
-  background-color: #ffffff;
-  color: #000000;
-}
-
-.icon-button:focus {
-  outline: none;
-}
 @keyframes logoAnimation {
   0%, 100% {
     transform: translateY(0);
