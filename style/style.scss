@@ -4,25 +4,15 @@
   box-sizing: border-box;
 }
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  background: linear-gradient(135deg, #111 25%, #777 25%, #777 50%, #fff 50%, #fff 75%, #111 75%);
-  background-size: 200% 235%;
-  animation: gradientAnimation 130s ease infinite;
+  background: linear-gradient(135deg, #111 25%, #777 25%, #777 50%, #fff 25%, #fff 75%, #111 75%);
+  background-size: 100% 250%;
+  height: 500px;
+  
+  position: relative;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -99,6 +89,7 @@ nav {
   margin: 10px auto;
   margin-bottom: 10px;
   animation: fadeIn 1.6s;
+  color: #f0f0f0;
 }
 
 @keyframes fadeIn {
