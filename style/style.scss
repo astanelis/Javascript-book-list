@@ -21,11 +21,10 @@ body {
   font-size: 16px;
   line-height: 1.6;
   background: linear-gradient(135deg, #111 25%, #777 25%, #777 50%, #fff 50%, #fff 75%, #111 75%);
-  background-size: 200% 400%;
+  background-size: 200% 200%;
   animation: gradientAnimation 120s ease infinite;
- 
 }
-  
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
 }
@@ -33,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 header {
   background-color: #777;
   padding: 1rem;
+
   h1 {
     margin-bottom: 0.5rem;
   }
@@ -42,6 +42,7 @@ input, select, button {
   font-size: 14px;
   font-weight: 400;
 }
+
 nav {
   display: flex;
   align-items: center;
@@ -49,25 +50,24 @@ nav {
   flex-wrap: wrap;
   gap: 1rem;
 
-
   #search-filters {
-     display: flex;
+    display: flex;
     gap: 1rem;
     flex-wrap: wrap;
     align-items: center;
 
     input[type="text"] {
- padding: 0.5rem;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  transition: border-color 0.3s;
-  outline: none;
+      padding: 0.5rem;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: border-color 0.3s;
+      outline: none;
 
-  &:focus {
-    border-color: black;
-  }
-}
+      &:focus {
+        border-color: black;
+      }
+    }
 
     #filter-menu,
     #sorting-menu {
@@ -87,7 +87,6 @@ nav {
       }
     }
   }
-
 }
 
 #add-book-form {
@@ -125,32 +124,30 @@ nav {
   input[type="text"],
   input[type="number"],
   input[type="url"] {
-  width: 100%;
-  padding: 5px 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 3px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  color:  black;
-  transition: box-shadow 0.3s;
-  }
+    width: 100%;
+    padding: 5px 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: black;
+    transition: box-shadow 0.3s;
 
-  input[type="text"]:focus,
-  input[type="number"]:focus,
-  input[type="url"]:focus {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  outline: none;
+    &:focus {
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      outline: none;
+    }
   }
 
   input[type="submit"] {
     grid-column: span 2;
-  background-color: #333;
-  color: #fff;
-  border: none;
-  padding: 8px 12px;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.2s, transform 0.2s;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
 
     &:hover {
       background-color: #555;
@@ -158,6 +155,7 @@ nav {
     }
   }
 }
+
 .booklist-item {
   background-color: #f0f0f0;
   background-image: linear-gradient(45deg, rgba(128, 128, 128, 0.1) 25%, transparent 25%, transparent 75%, rgba(128, 128, 128, 0.1) 75%, rgba(128, 128, 128, 0.1)),
@@ -205,10 +203,10 @@ nav {
   transition: background-color 0.3s ease;
   border-radius: 3px;
   width: 48%;
-}
 
-.generated-button:hover {
-  background-color: #555;
+  &:hover {
+    background-color: #555;
+  }
 }
 
 .generated-input {
@@ -218,6 +216,7 @@ nav {
   width: 100%;
   margin-bottom: 0.5rem;
 }
+
 .book-image {
   position: relative;
   width: 200px;
@@ -236,11 +235,9 @@ nav {
   background-position: center;
 }
 
-
 .swiper-container {
   width: 300px;
   height: 100%;
-  
 }
 
 .swiper-slide {
@@ -270,7 +267,6 @@ nav {
   color: white;
 }
 
-
 #booklist {
   position: relative;
 }
@@ -281,9 +277,6 @@ nav {
   width: 100%;
   margin-top: 25px;
 }
-
-
-
 
 .logo {
   position: relative;
@@ -300,7 +293,6 @@ nav {
     animation: logoAnimation 5s infinite;
   }
 }
-
 
 .arrow {
   display: inline-block;
@@ -324,11 +316,9 @@ nav {
   overflow: hidden;
   transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-top 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding-bottom 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   top: 100%;
-  left: -14px; 
+  left: -14px;
   border-radius: 4px;
-
 }
-
 
 .filter-menu:hover .dropdown-menu,
 .sorting-menu:hover .dropdown-menu {
@@ -348,17 +338,16 @@ nav {
   justify-content: center;
   align-items: center;
   transition: background-color 0.5s;
-}
 
-.icon-button:hover {
-  background-color: #ffffff;
-  color: #000000;
-}
+  &:hover{
+    background-color: #ffffff;
+    color: #000000;
+  }
+  &:focus{
+    outline: none;
+  }
 
-.icon-button:focus {
-  outline: none;
 }
-
 
 @keyframes logoAnimation {
   0%, 100% {
@@ -369,15 +358,13 @@ nav {
   }
 }
 
-
-
 @media (max-width: 480px) {
   #book-form {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 481px) and (max-width: 768px) {
   nav {
     flex-direction: column;
   }
@@ -392,5 +379,23 @@ nav {
   #filter-menu,
   #sorting-menu {
     flex-direction: column;
+  }
+}
+
+@media (min-width: 769px) {
+  nav {
+    flex-direction: row;
+  }
+  .logo {
+    margin-right: 1rem;
+  }
+  #search-filters {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  #filter-menu,
+  #sorting-menu {
+    flex-direction: row;
   }
 }
