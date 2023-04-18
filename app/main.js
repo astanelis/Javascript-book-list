@@ -3,6 +3,8 @@ const bookList = document.querySelector('#booklist ul.booklist-container')
 const toggleFormBtn = document.getElementById('toggle-form-btn')
 const addBookForm = document.getElementById('add-book-form')
 
+//is formos nuskaito pavadinima, autoriu, kategorija, metus, kaina ir nuotraukos reikšmes.Sukuria nauja knygos obijekta su ivestomis reiksmemis.iskviecia funkciją addBook .is naujo nustato forma, kad pridejus knyga butu isvalyti visi laukai.
+
 bookForm.addEventListener('submit', function (event) {
   event.preventDefault()
   const title = document.getElementById('title').value
@@ -16,6 +18,8 @@ bookForm.addEventListener('submit', function (event) {
   bookForm.reset()
 })
 
+// jeigu mygtukas nera paspaustas formos nesimato , jeigu mygtuka paspaudi forma islenda ir pasirodo.
+
 toggleFormBtn.addEventListener('click', () => {
   if (addBookForm.style.display === 'none') {
     addBookForm.style.display = 'block'
@@ -23,6 +27,8 @@ toggleFormBtn.addEventListener('click', () => {
     addBookForm.style.display = 'none'
   }
 })
+
+// funkcija kuri sukuria karusele pagal swiperio biblioteka .
 
 function initSwiper() {
   new Swiper('.swiper-container', {

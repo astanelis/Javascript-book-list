@@ -1,3 +1,5 @@
+// funkcija, kuri prideda nauja knyga ir itraukia i knygu sarasa , isaugo ir rodo knygu sarasa.
+
 function addBook(book) {
   const books = getBooks()
   books.push(book)
@@ -5,12 +7,16 @@ function addBook(book) {
   displayBooks()
 }
 
+// funkcija kuri istrina knyga is knygu saraso.Pasalina ta knyga kuria pasirenki ir issaugo nauja knygu sarasa
+
 function deleteBook(index) {
   const books = getBooks()
   books.splice(index, 1)
   saveBooks(books)
   displayBooks()
 }
+
+// funkcija kuri rodo knygas puslapyje . Sukuria html koda kekvienai knygai duotame masyve ir iterpia i elementa su ID bookList. Sukurtame faile yra info apie knyga ir trynimo mygtukas ir redagavimo .
 
 function displayBooks(booksToDisplay = getBooks()) {
   let html = ''
@@ -34,6 +40,8 @@ function displayBooks(booksToDisplay = getBooks()) {
 
   bookList.innerHTML = html
 
+  // Swiperio biblioteka , jeigu yra knygu kurias rodyti atsiranda mygtukai , jei nera ju nesimato . Leidzia judeti pirmyn ir atgla  stumdyti knygas su rodyklem ir pelyte.
+
   initSwiper()
 
   const nextButton = document.querySelector('.swiper-button-next')
@@ -47,6 +55,8 @@ function displayBooks(booksToDisplay = getBooks()) {
     prevButton.style.display = 'none'
   }
 }
+
+// Funkcija kuri leidzia redaguoti knygos informacija tam tikram masyve. Pakeicia html forma , kuri buvo sukurta anksciau su kita funkcija . Paspaudus mygtuka save informacija atsinaujina ir pasikeicia masyve .
 
 function editBook(index) {
   const books = getBooks()

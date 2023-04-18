@@ -3,6 +3,8 @@ const categoryFilter = document.getElementById('category')
 const authorFilter = document.getElementById('author')
 const sortBy = document.getElementById('sort-by')
 
+// funkcija kuri filtruoja ir rusiuoja knygu sarasa pagal ivestus raktazodzius . pirma ji filtruoja pagal paieskos lauka , tada filtruoja pagal pasirinkta kategorija. Ir tada suruosiuoja knygas pagal pasirinkta tvarka.
+
 function searchBooks() {
   const searchValue = searchBar.value.toLowerCase()
   const categoryValue = categoryFilter.value
@@ -35,6 +37,8 @@ function searchBooks() {
   displayBooks(filteredBooks)
 }
 
+// funkcija kuri sukuria autorius ir kategorija is knygu kurios buvo pridetos i masyva. Ir tada autorius ir kategorija kurie buvo sukurti perkele i meniu juostas , kad galeciau filtruoti pagal sukurtus atorius ir kategorijas.
+
 function populateFilters() {
   const storedBooks = getBooks()
   const authors = []
@@ -59,6 +63,8 @@ function populateFilters() {
     categoryFilter.appendChild(categoryOption)
   }
 }
+
+//kai ivedu teksta paieskos juostoje arba pakeiciu reiksme bet kuriame meniu , tai atnaujina rodoma knygu sarasa pagal raktazodi.
 
 searchBar.addEventListener('input', searchBooks)
 categoryFilter.addEventListener('change', searchBooks)
