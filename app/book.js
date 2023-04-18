@@ -8,3 +8,5 @@ class Book {
     this.image = image;
   }
 }
+
+//konstruktoriaus metodas, kuris yra specialus metodas, kuris iškviečiamas, kai sukuriate naują klasės egzempliorių.

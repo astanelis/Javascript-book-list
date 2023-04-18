@@ -35,5 +35,6 @@ function initSwiper() {
   })
 }
 
+populateFilters()
 displayBooks()
 initSwiper()
