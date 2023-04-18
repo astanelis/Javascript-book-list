@@ -37,7 +37,7 @@ function searchBooks() {
   displayBooks(filteredBooks)
 }
 
-// funkcija kuri sukuria autorius ir kategorija is knygu kurios buvo pridetos i masyva. Ir tada autorius ir kategorija kurie buvo sukurti perkele i meniu juostas , kad galeciau filtruoti pagal sukurtus atorius ir kategorijas.
+// funkcija kuri sukuria autorius ir kategorija is knygu kurios buvo pridetos i masyva. Ir tada autorius ir kategorija kurie buvo sukurti perkele i meniu juostas , kad galeciau filtruoti pagal sukurtus atorius ir kategorijas. Darant formoje pakeitimas , meniu juostoje irgi viskas pasikeicia arba issitrina.
 
 function populateFilters() {
   const storedBooks = getBooks()
@@ -52,17 +52,19 @@ function populateFilters() {
       categories.push(book.category)
     }
   }
-
+  authorFilter.innerHTML = `<option value="">All authors</option>`
   for (let author of authors) {
     const authorOption = new Option(author, author)
     authorFilter.appendChild(authorOption)
   }
+  categoryFilter.innerHTML = `<option value="">All categories</option>`
 
   for (let category of categories) {
     const categoryOption = new Option(category, category)
     categoryFilter.appendChild(categoryOption)
   }
 }
+populateFilters()
 
 //kai ivedu teksta paieskos juostoje arba pakeiciu reiksme bet kuriame meniu , tai atnaujina rodoma knygu sarasa pagal raktazodi.
 

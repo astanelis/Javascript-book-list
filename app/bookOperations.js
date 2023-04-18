@@ -5,6 +5,7 @@ function addBook(book) {
   books.push(book)
   saveBooks(books)
   displayBooks()
+  populateFilters()
 }
 
 // funkcija kuri istrina knyga is knygu saraso.Pasalina ta knyga kuria pasirenki ir issaugo nauja knygu sarasa
@@ -14,6 +15,7 @@ function deleteBook(index) {
   books.splice(index, 1)
   saveBooks(books)
   displayBooks()
+  populateFilters()
 }
 
 // funkcija kuri rodo knygas puslapyje . Sukuria html koda kekvienai knygai duotame masyve ir iterpia i elementa su ID bookList. Sukurtame faile yra info apie knyga ir trynimo mygtukas ir redagavimo .
@@ -95,7 +97,9 @@ function editBook(index) {
     book.image = listItem.querySelector('.edit-image').value
 
     books[index] = book
+
     saveBooks(books)
     displayBooks()
+    populateFilters()
   })
 }
