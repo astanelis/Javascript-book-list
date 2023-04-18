@@ -349,13 +349,7 @@ nav {
   }
 }
 
-@media (max-width: 480px) {
-  #book-form {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 768px) {
+@media  (max-width: 768px) {
   nav {
     flex-direction: column;
   }
@@ -370,23 +364,5 @@ nav {
   #filter-menu,
   #sorting-menu {
     flex-direction: column;
-  }
-}
-
-@media (min-width: 769px) {
-  nav {
-    flex-direction: row;
-  }
-  .logo {
-    margin-right: 1rem;
-  }
-  #search-filters {
-    flex-direction: row;
-    gap: 1rem;
-  }
-
-  #filter-menu,
-  #sorting-menu {
-    flex-direction: row;
   }
 }
