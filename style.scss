@@ -331,7 +331,6 @@ nav {
 }
 
 .dropdown-menu {
-  display: none;
   position: absolute;
   background-color: #f8f9fa;
   min-width: 100px;
@@ -344,12 +343,14 @@ nav {
   top: 100%;
   left: -14px;
   border-radius: 4px;
+  margin-bottom: auto;
+  opacity: 0;
 }
 
 .filter-menu:hover .dropdown-menu,
 .sorting-menu:hover .dropdown-menu {
-  display: block;
   max-height: none;
+  opacity: 1;
 }
 
 .icon-button {
